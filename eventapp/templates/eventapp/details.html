@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href={% static 'style.css'%}>
+</head>
+<body>
+    <header>
+        
+        <img id="logo" src="https://www.efuturex.com/static/assets/img/EFUTUREX-Logo.png"alt="logo of efutrex"/>
+        <nav>
+            <a class="nav-link" href="{% url 'index'  %}">Home</a>
+            <a class="nav-link" href="">Login</a>
+            <a class="nav-link" href="">Registration</a>
+             
+        </nav>
+    </header>
+    <section id="events">
+        
+        <div class="event-card1">
+            <h2 class="eventname">{{event.event_title}}</h2>
+            <p class="eventloc">{{event.location}}</p>
+            <p class="eventdate">{{event.date}}</p>
+            <p class="event_desc">{{event.description}}</p>
+            <form class="f" action="{% url 'eventdetail' event.pk%}" method="POST">
+                {% csrf_token %}
+                <h3 id="ap">Apply for this Event</h3>
+                {{form.as_p}} 
+                {% comment %} to take fields from form.py(RENDERING) {% endcomment %}
+                {% comment %} <label for="fullname" >Full Name</label><br>
+                <input class="in"type="text" name="fullname"><br>
+                <label for="email">Email id</label><br>
+                <input class="in" type="text" name="email"><br>
+                <label for="phone">Phone</label><br>
+                <input class="in" type="number" name="phone"><br>
+                <label for="college">College name</label><br>
+                <input class="in" type="text" name="college"><br><br> {% endcomment %}
+                <input class="in"id="btn" type="submit" value="Apply">
+            </form>
+            
+        </div>
+        
+    </section>
+    
+    <footer id="fo">
+        <p>&copy;2023 Event Registration System</p>
+    </footer>
+</body>
+</html>

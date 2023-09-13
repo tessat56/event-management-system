@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT MANAGEMENT</title>
+    <link rel="stylesheet" href={%static 'style.css'%}>
+</head>
+<body> 
+
+    <header>
+        
+        <img id="logo" src="https://www.efuturex.com/static/assets/img/EFUTUREX-Logo.png"alt="logo of efutrex"/>
+        <nav>
+            <a class="nav-link" href="{% url 'index'  %}">Home</a>
+            <a class="nav-link" href="">Login</a>
+            <a class="nav-link" href="">Registration</a>
+             
+        </nav>
+    </header>
+    <section id="events">
+        
+        <div class="event-card">
+            <h3>LOGIN PAGE</h3>
+                <form class="f" action="">
+                    
+                    <label for="fullname" >Full Name</label><br>
+                    <input class="in"type="text" placeholder="enter name" name="fullname"><br><br>
+                    <label for="email">Email id</label><br>
+                    <input class="in" type="text" name="email" placeholder="enter email"><br><br>
+                    <label for="phone">Password</label><br>
+                    <input class="in" type="number" name="phone" placeholder="enter password"><br><br>
+                    <input class="in"id="btn" type="submit" value="Apply">
+                </form>
+        </div>
+        
+    </section>
+    <footer>
+        <p>&copy;2023 Event Registration System</p>
+    </footer>
+
+    
+
+</body>
+</html>
